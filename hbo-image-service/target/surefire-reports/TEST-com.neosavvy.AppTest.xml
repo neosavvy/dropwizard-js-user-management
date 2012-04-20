@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.017" errors="0" skipped="0" tests="1" name="com.neosavvy.AppTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
+    <property name="java.vm.version" value="20.6-b01-415"/>
+    <property name="awt.nativeDoubleBuffering" value="true"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="mrj.build" value="11M3646"/>
+    <property name="java.vm.vendor" value="Apple Inc."/>
+    <property name="java.vendor.url" value="http://www.apple.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/NEOSAVVY/work/dropwizard/hbo-dropwizard/hbo-dropwizard/hbo-image-service"/>
+    <property name="java.runtime.version" value="1.6.0_31-b04-415-11M3646"/>
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment"/>
+    <property name="basedir" value="/NEOSAVVY/work/dropwizard/hbo-dropwizard/hbo-dropwizard/hbo-image-service"/>
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="surefire.real.class.path" value="/var/folders/ky/9hqqx4l10tl5mq4tl_lbw6000000gn/T/surefirebooter5230336988580335486.jar"/>
+    <property name="java.io.tmpdir" value="/var/folders/ky/9hqqx4l10tl5mq4tl_lbw6000000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="sun.jnu.encoding" value="MacRoman"/>
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="surefire.test.class.path" value="/NEOSAVVY/work/dropwizard/hbo-dropwizard/hbo-dropwizard/hbo-image-service/target/test-classes:/NEOSAVVY/work/dropwizard/hbo-dropwizard/hbo-dropwizard/hbo-image-service/target/classes:/Users/waparrish/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/Users/waparrish/.m2/repository/com/yammer/dropwizard/dropwizard-core/0.3.1/dropwizard-core-0.3.1.jar:/Users/waparrish/.m2/repository/com/sun/jersey/jersey-core/1.12/jersey-core-1.12.jar:/Users/waparrish/.m2/repository/com/sun/jersey/jersey-server/1.12/jersey-server-1.12.jar:/Users/waparrish/.m2/repository/asm/asm/3.1/asm-3.1.jar:/Users/waparrish/.m2/repository/com/sun/jersey/jersey-servlet/1.12/jersey-servlet-1.12.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-core/2.1.1/metrics-core-2.1.1.jar:/Users/waparrish/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-servlet/2.1.1/metrics-servlet-2.1.1.jar:/Users/waparrish/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.5/jackson-mapper-asl-1.9.5.jar:/Users/waparrish/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.5/jackson-core-asl-1.9.5.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-jetty/2.1.1/metrics-jetty-2.1.1.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-server/8.1.2.v20120308/jetty-server-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/orbit/javax.servlet/3.0.0.v201112011016/javax.servlet-3.0.0.v201112011016.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-continuation/8.1.2.v20120308/jetty-continuation-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-http/8.1.2.v20120308/jetty-http-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-io/8.1.2.v20120308/jetty-io-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-util/8.1.2.v20120308/jetty-util-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-log4j/2.1.1/metrics-log4j-2.1.1.jar:/Users/waparrish/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-jersey/2.1.1/metrics-jersey-2.1.1.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-annotation/2.1.1/metrics-annotation-2.1.1.jar:/Users/waparrish/.m2/repository/com/fasterxml/jackson/jackson-datatype-guava/1.9.0/jackson-datatype-guava-1.9.0.jar:/Users/waparrish/.m2/repository/com/google/guava/guava/11.0.2/guava-11.0.2.jar:/Users/waparrish/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/Users/waparrish/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar:/Users/waparrish/.m2/repository/org/slf4j/jul-to-slf4j/1.6.4/jul-to-slf4j-1.6.4.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-servlet/8.1.2.v20120308/jetty-servlet-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-security/8.1.2.v20120308/jetty-security-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/waparrish/.m2/repository/org/hibernate/hibernate-validator/4.2.0.Final/hibernate-validator-4.2.0.Final.jar:/Users/waparrish/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar:/Users/waparrish/.m2/repository/org/yaml/snakeyaml/1.10/snakeyaml-1.10.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.7.3"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/waparrish"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="file.encoding" value="MacRoman"/>
+    <property name="user.name" value="waparrish"/>
+    <property name="java.class.path" value="/NEOSAVVY/work/dropwizard/hbo-dropwizard/hbo-dropwizard/hbo-image-service/target/test-classes:/NEOSAVVY/work/dropwizard/hbo-dropwizard/hbo-dropwizard/hbo-image-service/target/classes:/Users/waparrish/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/Users/waparrish/.m2/repository/com/yammer/dropwizard/dropwizard-core/0.3.1/dropwizard-core-0.3.1.jar:/Users/waparrish/.m2/repository/com/sun/jersey/jersey-core/1.12/jersey-core-1.12.jar:/Users/waparrish/.m2/repository/com/sun/jersey/jersey-server/1.12/jersey-server-1.12.jar:/Users/waparrish/.m2/repository/asm/asm/3.1/asm-3.1.jar:/Users/waparrish/.m2/repository/com/sun/jersey/jersey-servlet/1.12/jersey-servlet-1.12.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-core/2.1.1/metrics-core-2.1.1.jar:/Users/waparrish/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-servlet/2.1.1/metrics-servlet-2.1.1.jar:/Users/waparrish/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.5/jackson-mapper-asl-1.9.5.jar:/Users/waparrish/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.5/jackson-core-asl-1.9.5.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-jetty/2.1.1/metrics-jetty-2.1.1.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-server/8.1.2.v20120308/jetty-server-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/orbit/javax.servlet/3.0.0.v201112011016/javax.servlet-3.0.0.v201112011016.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-continuation/8.1.2.v20120308/jetty-continuation-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-http/8.1.2.v20120308/jetty-http-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-io/8.1.2.v20120308/jetty-io-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-util/8.1.2.v20120308/jetty-util-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-log4j/2.1.1/metrics-log4j-2.1.1.jar:/Users/waparrish/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-jersey/2.1.1/metrics-jersey-2.1.1.jar:/Users/waparrish/.m2/repository/com/yammer/metrics/metrics-annotation/2.1.1/metrics-annotation-2.1.1.jar:/Users/waparrish/.m2/repository/com/fasterxml/jackson/jackson-datatype-guava/1.9.0/jackson-datatype-guava-1.9.0.jar:/Users/waparrish/.m2/repository/com/google/guava/guava/11.0.2/guava-11.0.2.jar:/Users/waparrish/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/Users/waparrish/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar:/Users/waparrish/.m2/repository/org/slf4j/jul-to-slf4j/1.6.4/jul-to-slf4j-1.6.4.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-servlet/8.1.2.v20120308/jetty-servlet-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/org/eclipse/jetty/jetty-security/8.1.2.v20120308/jetty-security-8.1.2.v20120308.jar:/Users/waparrish/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/waparrish/.m2/repository/org/hibernate/hibernate-validator/4.2.0.Final/hibernate-validator-4.2.0.Final.jar:/Users/waparrish/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar:/Users/waparrish/.m2/repository/org/yaml/snakeyaml/1.10/snakeyaml-1.10.jar:"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
+    <property name="sun.java.command" value="/var/folders/ky/9hqqx4l10tl5mq4tl_lbw6000000gn/T/surefirebooter5230336988580335486.jar /var/folders/ky/9hqqx4l10tl5mq4tl_lbw6000000gn/T/surefire5354032004922921438tmp /var/folders/ky/9hqqx4l10tl5mq4tl_lbw6000000gn/T/surefire6996858965898477720tmp"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="apple.awt.CToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_31"/>
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
+    <property name="java.vendor" value="Apple Inc."/>
+    <property name="localRepository" value="/Users/waparrish/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="mrj.version" value="1070.1.6.0_31-415"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="0.002" classname="com.neosavvy.AppTest" name="testApp"/>
+</testsuite>
