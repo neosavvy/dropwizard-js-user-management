@@ -3,14 +3,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>hbo-dropwizard</artifactId>
+    <artifactId>commons-user</artifactId>
     <groupId>com.neosavvy</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>com.neosavvy</groupId>
-  <artifactId>hbo-image-client</artifactId>
+  <artifactId>commons-user-client</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>hbo-image-client</name>
+  <name>Commons User Client</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
