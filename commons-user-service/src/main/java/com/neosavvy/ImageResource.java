@@ -6,6 +6,7 @@ import com.neosavvy.model.StorageBucketType;
 import com.neosavvy.utils.FileUtils;
 import com.neosavvy.utils.HttpUtils;
 import com.neosavvy.utils.StringUtils;
+import org.apache.commons.codec.binary.Base64InputStream;
 import org.apache.commons.fileupload.FileItemIterator;
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -29,7 +30,7 @@ import java.util.List;
  * Time: 12:53 PM
  * To change this template use File | Settings | File Templates.
  */
-@Path("/image")
+@Path("/backend/image")
 @Produces(MediaType.APPLICATION_JSON)
 public class ImageResource {
 
