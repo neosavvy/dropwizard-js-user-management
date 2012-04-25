@@ -1,0 +1,55 @@
+<html>
+<body>
+
+<form accept-charset="UTF-8"
+      action="http://local.commons-user.com:8080/image/file/images/3"
+      class="html-form" enctype="multipart/form-data" id="base64_decoder"
+      method="post"><div style="margin:0;padding:0;display:inline"><input
+        name="utf8" type="hidden" value="✓">
+
+    <div class="html-form-header">
+        <p>
+            Please enter data to decode.
+        </p>
+        <p class="mandatory-message">
+            <span class="mandatory-sign">*</span> denotes mandatory field.
+        </p>
+
+    </div>
+
+
+    <fieldset>
+        <div class="html-form-section">
+            <h2>Data information</h2>
+            <p>Please enter data to text area or select file with data.</p>
+        </div>
+
+        <ul>
+            <li>
+                <label for="base64_decoder_base64dump">Base64 data to
+                    decode<span class="mandatory-sign">*</span></label>
+                <textarea cols="40" id="base64_decoder_base64dump"
+                          name="base64_decoder[base64dump]" rows="20"></textarea>
+                <input id="base64_decoder_file" name="base64_decoder[file]" type="file">
+                <div class="form-hint">Enter data or select file to decode</div>
+
+            </li>
+            <li>
+                <input name="base64_decoder[save_to_file]" type="hidden"
+                       value="0"><input id="base64_decoder_save_to_file"
+                                        name="base64_decoder[save_to_file]" type="checkbox" value="1">
+                <label for="base64_decoder_save_to_file">Save result to file</label>
+                <div class="form-hint">Save result to file rather than output
+                    to browser</div>
+
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+
+        <input name="commit" type="submit" value="Decode">
+    </fieldset>
+</form>
+
+</body>
+</html>

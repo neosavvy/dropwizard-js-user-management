@@ -45,7 +45,7 @@
                                         implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.neosavvy.HelloWorldService</mainClass>
+                                    <mainClass>com.neosavvy.ImageService</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
@@ -66,6 +66,16 @@
             <groupId>com.yammer.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
             <version>0.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.clapper</groupId>
+            <artifactId>util</artifactId>
+            <version>2.5.1</version>
         </dependency>
 
     </dependencies>
