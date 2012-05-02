@@ -1,8 +1,12 @@
 package com.neosavvy;
 
 import com.yammer.dropwizard.config.Configuration;
+import com.yammer.dropwizard.db.DatabaseConfiguration;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,7 +17,12 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 public class UserConfiguration extends Configuration {
 
-    @NotEmpty
+    @Valid
+    @NotNull
     @JsonProperty
-    private String testVariable = "things";
+    private DatabaseConfiguration database = new DatabaseConfiguration();
+
+    public DatabaseConfiguration getDatabase() {
+        return database;
+    }
 }

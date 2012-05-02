@@ -2,6 +2,8 @@ package com.neosavvy;
 
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Environment;
+import com.yammer.dropwizard.db.Database;
+import com.yammer.dropwizard.db.DatabaseFactory;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,6 +27,10 @@ public class UserService extends Service<UserConfiguration> {
 
     @Override
     protected void initialize(UserConfiguration userConfiguration, Environment environment) throws Exception {
-        environment.addResource(new UserResource());
+
+        final DatabaseFactory factory = new DatabaseFactory(environment);
+        final Database db = factory.build(userConfiguration.getDatabase(), "mysql");
+        final UserDAO dao = db.onDemand(UserDAO.class);
+        environment.addResource(new UserResource(dao));
     }
 }

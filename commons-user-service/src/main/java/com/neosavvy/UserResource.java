@@ -14,21 +14,24 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Path("/backend/user")
-@Produces(MediaType.APPLICATION_JSON)
+@Consumes({MediaType.APPLICATION_JSON})
+@Produces({MediaType.APPLICATION_JSON})
 public class UserResource {
 
+    private UserDAO userDAO;
+
+    public UserResource(UserDAO userDAO) {
+        super();
+        this.userDAO = userDAO;
+    }
 
     @GET
-    @Consumes({MediaType.APPLICATION_JSON})
-    @Produces({MediaType.APPLICATION_JSON})
     public List<User> fetch(User user){
 
-        return null;
+        return userDAO.findAll();
     }
 
     @PUT
-    @Consumes({MediaType.APPLICATION_JSON})
-    @Produces({MediaType.APPLICATION_JSON})
     public User update(User user)
     {
 
@@ -36,22 +39,15 @@ public class UserResource {
     }
 
     @POST
-    @Consumes({MediaType.APPLICATION_JSON})
-    @Produces({MediaType.APPLICATION_JSON})
-    public User add(User user)
+    public void add(User user)
     {
-        return null;
+        userDAO.insert(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail());
     }
 
     @DELETE
-    @Consumes({MediaType.APPLICATION_JSON})
-    @Produces({MediaType.APPLICATION_JSON})
     public User delete(User user)
     {
         return null;
     }
-
-
-
 
 }
