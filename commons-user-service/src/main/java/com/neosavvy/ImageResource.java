@@ -6,7 +6,6 @@ import com.neosavvy.model.StorageBucketType;
 import com.neosavvy.utils.FileUtils;
 import com.neosavvy.utils.HttpUtils;
 import com.neosavvy.utils.StringUtils;
-import org.apache.commons.codec.binary.Base64InputStream;
 import org.apache.commons.fileupload.FileItemIterator;
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
