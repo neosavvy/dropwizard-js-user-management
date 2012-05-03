@@ -3,13 +3,13 @@ database:
   driverClass: com.mysql.jdbc.Driver
 
   # the username
-  user: commons-user
+  user: commons
 
   # the password
-  password: commons-user
+  password: commons
 
   # the JDBC URL
-  url: jdbc:mysql://localhost/commons
+  url: jdbc:mysql://localhost:8889/commons
 
   # any properties specific to your JDBC driver:
   properties:
@@ -29,6 +29,7 @@ database:
 
   # whether or not idle connections should be validated
   checkConnectionWhileIdle: false
+
 
   # how long a connection must be held before it can be validated
   checkConnectionHealthWhenIdleFor: 10s

@@ -22,7 +22,7 @@ public interface UserDAO {
     @Mapper(UserMapper.class)
     List<User> findAll();
 
-    @SqlUpdate("insert into user (id, firstName, lastName, email) values (:id, :firstName, :lastName, :email")
+    @SqlUpdate("insert into user (id, firstName, lastName, email) values (:id, :firstName, :lastName, :email)")
     void insert(
         @Bind("id") Long id
         ,@Bind("firstName") String firstName
