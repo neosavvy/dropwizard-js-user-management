@@ -26,7 +26,7 @@ public class UserResource {
     }
 
     @GET
-    public List<User> fetch(User user){
+    public List<User> fetch(){
 
         return userDAO.findAll();
     }

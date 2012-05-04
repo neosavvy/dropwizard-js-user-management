@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+
+<body>
+
+<div>
+    <form id="userForm">
+
+        <fieldset>
+            <legend> User Information </legend>
+            <p><label>First name: <input name="user.firstName"></label></p>
+            <p><label>Last name: <input name="user.lastName"></label></p>
+            <p><label>Email: <input name="user.email"></label></p>
+        </fieldset>
+
+        <input type="submit" value="register user"><br>
+    </form>
+</div>
+
+<div id="userList"></div>
+
+<script type="text/template" id="tpl-user-item">
+    <div>
+        <label>First name: <%= firstName%> </label>
+        <label>Last name: <%= lastName%> </label>
+        <label>Email: <%= email%> </label>
+    </div>
+</script>
+
+
+<script src="js/underscore.js"></script>
+<script src="js/jquery-1.7.2.js"></script>
+<script src="js/backbone.js"></script>
+
+<script src="js/application.js"></script>
+
+</body>
+
+</html>
