@@ -39,8 +39,8 @@ public class UserResource {
     @Produces({MediaType.APPLICATION_JSON})
     public User update(@PathParam("id") Long id, User user)
     {
-        user.setId(id);
         return userDAO.update(
+                id,
                 user.getFirstName(),
                 user.getLastName(),
                 user.getEmail()
