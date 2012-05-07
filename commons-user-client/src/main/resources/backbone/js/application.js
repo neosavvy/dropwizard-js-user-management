@@ -1,4 +1,6 @@
-window.User = Backbone.Model.extend({});
+window.User = Backbone.Model.extend({
+    idAttribute: "firstName"
+});
 
 window.UserCollection = Backbone.Collection.extend({
     model: User
@@ -48,9 +50,6 @@ var AppRouter = Backbone.Router.extend({
     list:function () {
         this.userList = new UserCollection();
         this.userListView = new UserListView({model:this.userList});
-
-        each
-
         this.userList.fetch();
         $('#userList').html(this.userListView.render().el);
     }
