@@ -4,27 +4,33 @@
 
 <body>
 
-<div>
-    <form id="userForm">
+<div id="userHeader"></div>
 
-        <fieldset>
-            <legend> User Information </legend>
-            <p><label>First name: <input name="user.firstName"></label></p>
-            <p><label>Last name: <input name="user.lastName"></label></p>
-            <p><label>Email: <input name="user.email"></label></p>
-        </fieldset>
-
-        <input type="submit" value="register user"><br>
-    </form>
-</div>
+<div id="userDetail"></div>
 
 <div id="userList"></div>
+
+<script type="text/template" id="tpl-header">
+    <span class="title">User Management</span>
+    <button class="new">New User</button>
+</script>
 
 <script type="text/template" id="tpl-user-item">
     <div>
         <label>First name: <%= firstName%> </label>
         <label>Last name: <%= lastName%> </label>
         <label>Email: <%= email%> </label>
+    </div>
+</script>
+
+<script type="text/template" id="tpl-user-detail">
+    <div class="form-left-col">
+        <!--<label>Id:</label><input type="text" id="id" name="id" value="<%= id %>" disabled />-->
+        <label>First Name:</label><input type="text" id="firstName" name="firstName" required />
+        <label>Last Name:</label><input type="text" id="lastName" name="lastName" required />
+        <label>Email:</label><input type="text" id="email" name="email" required />
+        <button class="save">Save</button>
+        <button class="delete">Delete</button>
     </div>
 </script>
 
