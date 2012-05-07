@@ -14,13 +14,12 @@ window.UserCollection = Backbone.Collection.extend({
 
 window.UserListView = Backbone.View.extend({
 
-    tagName:'ul',
+    el: $('#userList'),
 
     initialize:function () {
         this.model.bind("reset", this.render, this);
-        var self = this;
         this.model.bind("add", function (user) {
-            $(self.el).append(new UserListItemView({model:user}).render().el);
+            $('#userList').append(new UserListItemView({model:user}).render().el);
         });
     },
 
@@ -62,6 +61,8 @@ window.UserListItemView = Backbone.View.extend({
 
 window.UserView = Backbone.View.extend({
 
+    el: $('#userDetail'),
+
     template:_.template($('#tpl-user-detail').html()),
 
     initialize:function() {
@@ -91,9 +92,18 @@ window.UserView = Backbone.View.extend({
             email:$('#email').val()
         });
         if (this.model.isNew()) {
-            app.userList.create(this.model);
+            var self = this;
+            app.userList.create(this.model, {
+                success: function () {
+                    app.navigate('user/' + self.model.id, false);
+                }
+            });
         } else {
-            this.model.save();
+            this.model.save({
+                success: function() {
+                    console.log("user save was successful");
+                }
+            });
         }
         return false;
     },
@@ -102,9 +112,9 @@ window.UserView = Backbone.View.extend({
         this.model.destroy({
             success:function () {
                 alert('User deleted successfully');
-                window.history.back();
             }
-        })
+        });
+        return false;
     },
 
     close:function () {
@@ -114,6 +124,8 @@ window.UserView = Backbone.View.extend({
 })
 
 window.UserHeaderView = Backbone.View.extend({
+
+    el: $('#userHeader'),
 
     template:_.template($('#tpl-header').html()),
 
@@ -131,9 +143,7 @@ window.UserHeaderView = Backbone.View.extend({
     },
 
     newUser:function(event) {
-        if( app.userView ) app.userView.close();
-        app.userView = new UserView({model: new User()});
-        $('#userDetail').html(app.userView.render().el);
+        app.navigate("user/new",true);
         return false;
     }
 
@@ -145,29 +155,44 @@ var AppRouter = Backbone.Router.extend({
 
     routes:{
         "":"list",
+        "user/new":"newUser",
         "user/:id":"userDetails"
     },
 
-    initialize: function() {
-        $('#userHeader').html(new UserHeaderView().render().el);
-    },
-
     list:function () {
+
         this.userList = new UserCollection();
-        this.userListView = new UserListView({model:this.userList});
-        this.userList.fetch();
-        $('#userList').html(this.userListView.render().el);
+        var self = this;
+        this.userList.fetch({
+            success:function() {
+                self.userListView = new UserListView({model:self.userList});
+                self.userListView.render();
+                if (self.requestedId) self.userDetails(self.requestedId);
+            }
+        });
     },
 
     userDetails:function(id) {
-        this.user = this.userList.get(id);
+        if( this.userList ) {
+            this.user = this.userList.get(id);
+            if( app.userView ) app.userView.close();
+            this.userView = new UserView({model:this.user});
+            this.userView.render();
+        } else {
+            this.requestedId = id;
+            this.list();
+        }
+    },
+
+    newUser: function() {
         if( app.userView ) app.userView.close();
-        this.userView = new UserView({model:this.user});
-        $('#userDetail').html(this.userView.render().el);
+        app.userView = new UserView({model: new User()});
+        app.userView.render();
+
     }
 
 });
 
 var app = new AppRouter();
 Backbone.history.start();
-
+var header = new UserHeaderView();

@@ -30,4 +30,16 @@ public interface UserDAO {
         ,@Bind("email") String email
     );
 
+    @SqlUpdate("update user set firstName = :firstName, lastName = :lastName, email = :email where id = :id")
+    User update(
+        @Bind("firstName") String firstName
+        ,@Bind("lastName") String lastName
+        ,@Bind("email") String email
+    );
+
+    @SqlUpdate("delete from user where id = :id")
+    void delete(
+        @Bind("id") Long id
+    );
+
 }

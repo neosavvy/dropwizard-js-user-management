@@ -13,9 +13,8 @@ import java.util.List;
  * Time: 11:52 AM
  * To change this template use File | Settings | File Templates.
  */
-@Path("/backend/user")
-@Consumes({MediaType.APPLICATION_JSON})
-@Produces({MediaType.APPLICATION_JSON})
+
+@Path("/backend")
 public class UserResource {
 
     private UserDAO userDAO;
@@ -26,28 +25,44 @@ public class UserResource {
     }
 
     @GET
+    @Path("/user")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public List<User> fetch(){
 
         return userDAO.findAll();
     }
 
     @PUT
-    public User update(User user)
+    @Path("/user/{id}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public User update(@PathParam("id") Long id, User user)
     {
-
-        return null;
+        user.setId(id);
+        return userDAO.update(
+                user.getFirstName(),
+                user.getLastName(),
+                user.getEmail()
+        );
     }
 
     @POST
+    @Path("/user")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public void add(User user)
     {
         userDAO.insert(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail());
     }
 
     @DELETE
-    public User delete(User user)
+    @Path("/user/{id}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public void delete(@PathParam("id") Long id)
     {
-        return null;
+        userDAO.delete(id);
     }
 
 }

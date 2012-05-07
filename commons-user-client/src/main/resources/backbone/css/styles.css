@@ -3,21 +3,21 @@
     font-size: 18px;
 }
 
-#header {
+#userHeader {
     padding-top: 5px;
 }
 
-#sidebar {
+#userList {
     position: absolute;
     left: 10px;
     top: 70px;
     bottom: 20px;
-    width: 260px;
+    width: 600px;
     border: solid 1px #CCCCCC;
     overflow-y: scroll;
 }
 
-#content {
+#userDetail {
     position: absolute;
     top: 70px;
     bottom: 20px;

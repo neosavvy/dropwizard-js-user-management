@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
-
+<head>
+    <title>User Management</title>
+    <!--<link rel="stylesheet" href="./css/styles.css" />-->
+</head>
 
 <body>
 
@@ -16,11 +19,9 @@
 </script>
 
 <script type="text/template" id="tpl-user-item">
-    <div>
-        <label><a href='#user/<%= id %>'><%= firstName%></a> </label>
-        <label><a href='#user/<%= id %>'><%= lastName%></a> </label>
-        <label><a href='#user/<%= id %>'><%= email%></a> </label>
-    </div>
+
+    <label><a href='#user/<%= id %>'><%= firstName%></a> </label><label><a href='#user/<%= id %>'><%= lastName%></a> </label><label><a href='#user/<%= id %>'><%= email%></a> </label>
+
 </script>
 
 <script type="text/template" id="tpl-user-detail">
