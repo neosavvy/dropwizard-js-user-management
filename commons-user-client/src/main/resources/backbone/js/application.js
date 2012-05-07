@@ -12,6 +12,54 @@ window.UserCollection = Backbone.Collection.extend({
     ,url: 'http://local.commons-user.com/backend/user'
 });
 
+window.UserListView = Backbone.View.extend({
+
+    tagName:'ul',
+
+    initialize:function () {
+        this.model.bind("reset", this.render, this);
+        var self = this;
+        this.model.bind("add", function (user) {
+            $(self.el).append(new UserListItemView({model:user}).render().el);
+        });
+    },
+
+    render:function (eventName) {
+        _.each(this.model.models, function (user) {
+            $(this.el).append(new UserListItemView({model:user}).render().el);
+        }, this);
+
+        return this;
+    }
+
+
+});
+
+window.UserListItemView = Backbone.View.extend({
+
+    tagName:"li",
+
+    template:_.template($('#tpl-user-item').html()),
+
+    initialize:function () {
+        this.model.bind("change", this.render, this);
+        this.model.bind("destroy", this.close, this);
+    },
+
+    render:function (eventName) {
+        $(this.el).html(this.template(this.model.toJSON()));
+        return this;
+    },
+
+    close:function () {
+        $(this.el).unbind();
+        $(this.el).remove();
+    }
+
+
+
+});
+
 window.UserView = Backbone.View.extend({
 
     template:_.template($('#tpl-user-detail').html()),
@@ -20,8 +68,20 @@ window.UserView = Backbone.View.extend({
         this.model.bind("change", this.render, this);
     },
 
+    render:function (eventName) {
+        $(this.el).html(this.template(this.model.toJSON()));
+        return this;
+    },
+
     events:{
-        "click .save":"saveUser"
+        "change input":"change",
+        "click .save":"saveUser",
+        "click .delete":"deleteUser"
+    },
+
+    change:function (event) {
+        var target = event.target;
+        console.log('changing ' + target.id + ' from: ' + target.defaultValue);
     },
 
     saveUser:function () {
@@ -38,9 +98,13 @@ window.UserView = Backbone.View.extend({
         return false;
     },
 
-    render:function (eventName) {
-        $(this.el).html(this.template(this.model.toJSON()));
-        return this;
+    deleteUser:function() {
+        this.model.destroy({
+            success:function () {
+                alert('User deleted successfully');
+                window.history.back();
+            }
+        })
     },
 
     close:function () {
@@ -75,45 +139,13 @@ window.UserHeaderView = Backbone.View.extend({
 
 })
 
-window.UserListView = Backbone.View.extend({
-
-    tagName:'ul',
-
-    initialize:function () {
-        this.model.bind("reset", this.render, this);
-    },
-
-    render:function (eventName) {
-        _.each(this.model.models, function (user) {
-            $(this.el).append(new UserListItemView({model:user}).render().el);
-        }, this);
-
-        return this;
-    }
-
-
-});
-
-window.UserListItemView = Backbone.View.extend({
-
-    tagName:"li",
-
-    template:_.template($('#tpl-user-item').html()),
-
-    render:function (eventName) {
-        $(this.el).html(this.template(this.model.toJSON()));
-        return this;
-    }
-
-});
-
 
 // Router
 var AppRouter = Backbone.Router.extend({
 
     routes:{
         "":"list",
-        "users/:id":"userDetails"
+        "user/:id":"userDetails"
     },
 
     initialize: function() {

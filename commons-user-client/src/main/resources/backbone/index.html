@@ -17,18 +17,18 @@
 
 <script type="text/template" id="tpl-user-item">
     <div>
-        <label>First name: <%= firstName%> </label>
-        <label>Last name: <%= lastName%> </label>
-        <label>Email: <%= email%> </label>
+        <label><a href='#user/<%= id %>'><%= firstName%></a> </label>
+        <label><a href='#user/<%= id %>'><%= lastName%></a> </label>
+        <label><a href='#user/<%= id %>'><%= email%></a> </label>
     </div>
 </script>
 
 <script type="text/template" id="tpl-user-detail">
     <div class="form-left-col">
-        <!--<label>Id:</label><input type="text" id="id" name="id" value="<%= id %>" disabled />-->
-        <label>First Name:</label><input type="text" id="firstName" name="firstName" required />
-        <label>Last Name:</label><input type="text" id="lastName" name="lastName" required />
-        <label>Email:</label><input type="text" id="email" name="email" required />
+        <label>Id:</label><input type="text" id="id" name="id" value="<%= id %>" disabled />
+        <label>First Name:</label><input type="text" id="firstName" name="firstName" value="<%= firstName %>" required />
+        <label>Last Name:</label><input type="text" id="lastName" name="lastName" value="<%= lastName %>" required />
+        <label>Email:</label><input type="text" id="email" name="email" value="<%= email %>" required />
         <button class="save">Save</button>
         <button class="delete">Delete</button>
     </div>
