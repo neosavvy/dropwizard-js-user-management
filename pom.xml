@@ -15,6 +15,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <id>clapper-org-maven-repo</id>
+            <name>org.clapper Maven Repo</name>
+            <url>http://maven.clapper.org/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
     <build>
         <pluginManagement>
             <plugins>
