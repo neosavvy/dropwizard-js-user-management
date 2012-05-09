@@ -5,22 +5,23 @@
 <body ng:controller="UserController">
 
 
-<p>{{user.firstName}}</p>
-<p>{{user.lastName}}</p>
-<p>{{user.email}}</p>
-
 <form ng:submit="registerUser()">
 
     <fieldset>
-        <legend> User Information </legend>
-        <p><label>First name: <input name="user.firstName"></label></p>
-        <p><label>Last name: <input name="user.lastName"></label></p>
-        <p><label>Email: <input name="user.email"></label></p>
+        <label>First name: <input name="user.firstName"></label>
+        <label>Last name: <input name="user.lastName"></label>
+        <label>Email: <input name="user.email"></label>
     </fieldset>
 
     <input type="submit" value="register user"><br>
+    <button ng:click="deleteUser()">Delete</button>
 </form>
 
+<div ng:repeat="user in users">
+    <label><a href='#user/{{user.id}}'>{{user.firstName}}</a> </label>
+    <label><a href='#user/{{user.id}}'>{{user.lastName}}</a> </label>
+    <label><a href='#user/{{user.id}}'>{{user.email}}</a> </label>
+</div>
 
 <script src="js/lib/angular-0.9.19.js" ng:autobind></script>
 <script src="js/controllers.js"></script>

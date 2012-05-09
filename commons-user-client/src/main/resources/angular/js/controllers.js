@@ -2,28 +2,30 @@ function UserController($xhr) {
 
 
     this.user = {
-        id: 1,
         firstName: '',
         lastName: '',
         emailAddress: ''
     };
 
+    this.users = {};
+
     var self = this;
+    self.loadUsers = function() {
+        $xhr('GET', 'http://local.commons-user.com/backend/user'
+            ,function(code, response) {
+                self.response = response;
+                self.code = code;
+                self.message = "Success was awesome!";
+                self.users = response;
+            },
+            function(code, response) {
+                self.response = response;
+                self.code = code;
+                self.message = "Error occurred";
+            }
 
-//    $xhr('GET', 'http://local.commons-user.com/backend/user'
-//        ,function(code, response) {
-//            self.response = response;
-//            self.code = code;
-//            self.message = "Success was awesome!";
-//        },
-//        function(code, response) {
-//            self.response = response;
-//            self.code = code;
-//            self.message = "Error occurred";
-//        }
-//
-//    );
-
+        );
+    }
 
     self.registerUser = function()
     {
@@ -33,6 +35,7 @@ function UserController($xhr) {
                 self.response = response;
                 self.code = code;
                 self.message = "Success was awesome!";
+                self.loadUsers();
             },
             function(code, response) {
                 self.response = response;
@@ -42,4 +45,6 @@ function UserController($xhr) {
         );
     }
 
+
+    self.loadUsers();
 }
