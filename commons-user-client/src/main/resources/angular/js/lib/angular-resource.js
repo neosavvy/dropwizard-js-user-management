@@ -1,0 +1,1 @@
+angular-1.0.0rc8/angular-resource-1.0.0rc8.js
