@@ -1,1 +1,1 @@
-angular-0.9.19/angular-0.9.19.js
+angular-1.0.0rc8/angular-1.0.0rc8.js
