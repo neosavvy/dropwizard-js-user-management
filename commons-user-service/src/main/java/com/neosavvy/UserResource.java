@@ -37,9 +37,9 @@ public class UserResource {
     @Path("/user/{id}")
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
-    public User update(@PathParam("id") Long id, User user)
+    public void update(@PathParam("id") Long id, User user)
     {
-        return userDAO.update(
+        userDAO.update(
                 id,
                 user.getFirstName(),
                 user.getLastName(),
@@ -58,7 +58,7 @@ public class UserResource {
 
     @DELETE
     @Path("/user/{id}")
-    @Consumes({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     @Produces({MediaType.APPLICATION_JSON})
     public void delete(@PathParam("id") Long id)
     {

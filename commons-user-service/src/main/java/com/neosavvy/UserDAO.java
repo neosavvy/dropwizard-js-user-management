@@ -31,7 +31,7 @@ public interface UserDAO {
     );
 
     @SqlUpdate("update user set firstName = :firstName, lastName = :lastName, email = :email where id = :id")
-    User update(
+    void update(
         @Bind("id") Long id
         ,@Bind("firstName") String firstName
         ,@Bind("lastName") String lastName

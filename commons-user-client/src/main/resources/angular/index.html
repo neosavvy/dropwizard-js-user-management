@@ -4,7 +4,7 @@
 
 <body ng-controller="UserController">
 
-<form ng-submit="registerUser()">
+<form ng-submit="saveUser()">
 
     <fieldset>
         <label>First name: <input type="text" ng-model="user.firstName"></label>
@@ -12,14 +12,12 @@
         <label>Email: <input type="text" ng-model="user.email"></label>
     </fieldset>
 
-    <input type="submit" value="register user"><br>
+    <input type="submit" value="Save"><br>
     <button ng-click="deleteUser()">Delete</button>
 </form>
 
 <div ng-repeat="user in users">
-    <label><a href='#user/{{user.id}}'>{{user.firstName}}</a> </label>
-    <label><a href='#user/{{user.id}}'>{{user.lastName}}</a> </label>
-    <label><a href='#user/{{user.id}}'>{{user.email}}</a> </label>
+    <a ng-click="editUser(user)">{{user.firstName}} {{user.lastName}} {{user.email}}</a>
 </div>
 
 <script src="js/lib/angular.js"></script>

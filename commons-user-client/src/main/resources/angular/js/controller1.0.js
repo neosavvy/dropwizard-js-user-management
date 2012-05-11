@@ -6,7 +6,11 @@ function UserController($scope, $resource) {
         email: ''
     };
 
-    var User = $resource('/backend/user/:userId');
+    var User = $resource('/backend/user/:userId',
+        null,
+        {'remove': {method:'DELETE', params: {userId: '@id'}, isArray:false},
+         'update': {method:'PUT', params: {userId: '@id'}, isArray:false}
+          } );
 
     $scope.users = {};
 
@@ -17,14 +21,43 @@ function UserController($scope, $resource) {
 
     }
 
-    self.registerUser = function()
+    self.saveUser = function()
     {
+        if( $scope.user.id == null )
+        {
+            User.save( $scope.user, function(){
+                $scope.loadUsers();
+            }, function() {
+                console.log('error');
+            } );
+        }
+        else
+        {
+            User.update({userId: $scope.user.id}, $scope.user, function(){
+                $scope.loadUsers();
+            }, function() {
+                console.log('error');
+            } );
+        }
+    }
 
-        User.save( $scope.user, function(){
+    self.editUser = function( user )
+    {
+        $scope.user = user;
+        console.log("user.id=" + user.id);
+        console.log("user=" + user);
+    }
+
+    self.deleteUser = function( )
+    {
+        User.delete({userId:$scope.user.id}, function() {
             $scope.loadUsers();
-        }, function() {
-            console.log('error');
-        } );
+            $scipe.user = {
+                firstName: '',
+                lastName: '',
+                email: ''
+            }
+        })
     }
 
     self.loadUsers();
