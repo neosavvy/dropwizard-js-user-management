@@ -9,7 +9,7 @@ database:
   password: commons
 
   # the JDBC URL
-  url: jdbc:mysql://localhost:8889/commons
+  url: jdbc:mysql://localhost:3306/commons
 
   # any properties specific to your JDBC driver:
   properties:
