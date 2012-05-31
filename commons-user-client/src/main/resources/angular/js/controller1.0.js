@@ -27,6 +27,7 @@ function UserController($scope, $resource) {
         {
             User.save( $scope.user, function(){
                 $scope.loadUsers();
+                $scope.newUser();
             }, function() {
                 console.log('error');
             } );
@@ -52,12 +53,21 @@ function UserController($scope, $resource) {
     {
         User.delete({userId:$scope.user.id}, function() {
             $scope.loadUsers();
-            $scipe.user = {
+            $scope.user = {
                 firstName: '',
                 lastName: '',
                 email: ''
             }
         })
+    }
+
+    self.newUser = function()
+    {
+        $scope.user = {
+            firstName: '',
+            lastName: '',
+            email: ''
+        }
     }
 
     self.loadUsers();

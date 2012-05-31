@@ -4,7 +4,7 @@
 
 <body ng-controller="UserController">
 
-<form ng-submit="saveUser()">
+<form>
 
     <fieldset>
         <label>First name: <input type="text" ng-model="user.firstName"></label>
@@ -12,8 +12,9 @@
         <label>Email: <input type="text" ng-model="user.email"></label>
     </fieldset>
 
-    <input type="submit" value="Save"><br>
+    <button ng-click="saveUser()">Save</button>
     <button ng-click="deleteUser()">Delete</button>
+    <button ng-click="newUser()">New User</button>
 </form>
 
 <div ng-repeat="user in users">
