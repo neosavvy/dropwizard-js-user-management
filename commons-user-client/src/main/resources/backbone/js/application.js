@@ -9,7 +9,7 @@ window.User = Backbone.Model.extend({
 
 window.UserCollection = Backbone.Collection.extend({
     model: User
-    ,url: 'http://local.commons-user.com/backend/user'
+    ,url: '/backend/user'
 });
 
 window.UserListView = Backbone.View.extend({
